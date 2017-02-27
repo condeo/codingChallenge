@@ -6,7 +6,6 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-
 class Command(BaseCommand):
     help("typical command would be: python manage.py gen_reports")
 
@@ -36,3 +35,5 @@ class Command(BaseCommand):
             if row[0][1] == 'F':
                 pivot['above National avg.'] = np.where(
                     pivot['Avg resp. time'] >= 2.5, 'yes', 'no')
+        self.pivot = pivot
+    

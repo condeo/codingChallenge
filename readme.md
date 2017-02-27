@@ -3,14 +3,12 @@
  2- add your database credentials in settings.py at line 87,88 ("USER": "your_db_name", "PASSWORD": "your_db_pass")
  3- python manage.py migrate. If that doesn't work, do python manage.py migrate shop_workflow
  4- python manage.py createsuperuser
-#username: root
-#password: A1234567
 
 5- Loading CSV file would be: python manage.py load_csv
-#this will lookf for a csv file named "seed.csv" inside the data folder
+    -this will lookf for a csv file named "seed.csv" inside the data folder
 
 6- Command to run the report (mechanic per repair type) would be: python manage.py gen_reports
-#this will print the report in your shell screen
+    -this will print the report in your shell screen
 
 Assumptions: I considered the column id (in the example table)to be the primary key: In other\ 
 words, in the example table given, data from line 4 (Rich) will be \
@@ -20,17 +18,6 @@ repair_data,repair_created = CarRepair.objects.get_or_create(id=row.id)\
 to this line:
 repair_data,repair_created = CarRepair.objects.get_or_create(id=row.id,assigned_mechanic = repair_mechanic)
 
-#TODO: Need to implement the unittest cases
-#TODO: should change iteration in gen_reports.py to lambda expression
-#Gotcha: There might be a small issue with Rich's record for repair type D. Need to dig in further
-
-#sample output would be:
-
-                      Avg resp. time above National avg.
-Mechanic repair type
-Bob      A                       0.0                  no
-Ousmane  A                       1.5                 yes
-         B                       1.0                 yes
-Rich     A                       0.0                  no
-         D                       1.5                 yes
-Simone   E                       1.0                 yes
+    -TODO: Need to implement the unittest cases
+    -TODO: should change iteration in gen_reports.py to lambda expression
+    -Gotcha: There might be a small issue with Rich's record for repair type D. Need to dig in further

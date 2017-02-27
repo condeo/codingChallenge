@@ -1,0 +1,5 @@
+2017-02-27 03:12:24,932 ERROR exception occured in compute_length_of_service
+Traceback (most recent call last):
+  File "/mnt/websites/www/CodingChallenge/shop_workflow/models.py", line 33, in compute_length_of_service
+    los = np.busday_count(dropoff,pickup)
+ValueError: Cannot create a NumPy datetime other than NaT with generic units

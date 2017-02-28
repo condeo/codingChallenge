@@ -1,4 +1,13 @@
- 0 please create your virtual environment using requirements.txt and activate your virtual environment 
+A- To load csv data into MySQL Database, type 
+#$python manage.py load_csv
+B- To generate and print the report from database records into the shell screen, type 
+#$python manage.py gen_reports
+C- To run test cases, type 
+#$python manage.py test
+ 
+ 
+ 0 please create your virtual environment using requirements.txt and activate your virtual environment
+    in my case, the virtualEnvironment created was called codingChallenge
  1- create a MySQL database named:CodingChallenge_dev_db
  2- add your database credentials in settings.py at line 87,88 ("USER": "your_db_name", "PASSWORD": "your_db_pass")
  3- python manage.py migrate. If that doesn't work, do python manage.py migrate shop_workflow
@@ -18,6 +27,5 @@ repair_data,repair_created = CarRepair.objects.get_or_create(id=row.id)\
 to this line:
 repair_data,repair_created = CarRepair.objects.get_or_create(id=row.id,assigned_mechanic = repair_mechanic)
 
-    -TODO: Need to implement the unittest cases
     -TODO: should change iteration in gen_reports.py to lambda expression
     -Gotcha: There might be a small issue with Rich's record for repair type D. Need to dig in further

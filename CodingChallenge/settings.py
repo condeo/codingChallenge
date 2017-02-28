@@ -130,3 +130,33 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGGING = {
+    'version':1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'basic': {
+            'format': '%(asctime)s %(name)-20s %(levelname)-8s %(module)s | %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'basic',
+            'maxBytes': 10000,
+            'backupCount': 10, # at most 10 log files of 10000 Bytes each
+            'filename': os.path.join(BASE_DIR, 'logs/codingChallenge_logs.log'),
+        },
+    },
+    'loggers': {
+        'shop_workflow': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        }
+    }
+}

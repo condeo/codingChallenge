@@ -85,8 +85,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "CodingChallenge_dev_db",
-        "USER": "root",
-        "PASSWORD": "basket",
+        "USER": "place_your_username_here",
+        "PASSWORD": "place_your_password_here",
         "HOST": "",
         "PORT": "",
     }

@@ -6,12 +6,12 @@ C- To run test cases, type
 #$python manage.py test
  
  
- 0 please create your virtual environment using requirements.txt and activate your virtual environment
+0 please create your virtual environment using requirements.txt and activate your virtual environment
     in my case, the virtualEnvironment created was called codingChallenge
- 1- create a MySQL database named:CodingChallenge_dev_db
- 2- add your database credentials in settings.py at line 87,88 ("USER": "your_db_name", "PASSWORD": "your_db_pass")
- 3- python manage.py migrate. If that doesn't work, do python manage.py migrate shop_workflow
- 4- python manage.py createsuperuser
+1- create a MySQL database named:CodingChallenge_dev_db
+2- add your database credentials in settings.py at line 87,88 ("USER": "your_db_name", "PASSWORD": "your_db_pass")
+3- python manage.py migrate. If that doesn't work, do python manage.py migrate shop_workflow
+4- python manage.py createsuperuser
 
 5- Loading CSV file would be: python manage.py load_csv
     -this will lookf for a csv file named "seed.csv" inside the data folder
